@@ -1,4 +1,4 @@
-TOKEN = '6091847799:AAHD6M_T9yMEm82JTiT5LsIpxEXvmWMo-wU'
+TOKEN = ''
 
 exchange = {'евро' : 'EUR',
        'доллар' : 'USD',
