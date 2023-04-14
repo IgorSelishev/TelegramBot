@@ -87,4 +87,41 @@ def convert(message: telebot.types.Message):
        except Exception as e:
               bot_exchange.reply_to(message, f"{e}")
 
+@bot_exchange.message_handler(content_types=['audio', ])
+def audio_factory(message: telebot.types.Message):
+    bot_exchange.send_message(message.chat.id, 'Сочный звук, мне нра. Хотя ОЙ, ушей-то у меня нет. Вру.')
+
+
+@bot_exchange.message_handler(content_types=['photo', ])
+def photo_factory(message: telebot.types.Message):
+    bot_exchange.send_message(message.chat.id, 'Для меня картинки все на одну точку, ничего не вижу, глаз-то нет.')
+
+
+@bot_exchange.message_handler(content_types=['voice', ])
+def voice_factory(message: telebot.types.Message):
+    bot_exchange.send_message(message.chat.id, 'Я робот, мной непостижимы голоса из внешнего мира.')
+
+
+@bot_exchange.message_handler(content_types=['video', ])
+def video_factory(message: telebot.types.Message):
+    bot_exchange.send_message(message.chat.id, 'Что-то мельтешит такое, но не распознаю. Я-ж не нейросеть, робот простой.')
+
+
+@bot_exchange.message_handler(content_types=['document', ])
+def doc_factory(message: telebot.types.Message):
+    bot_exchange.send_message(message.chat.id, 'Видать что-то дельное написано. Но мне не понять, я больше по валютам.')
+
+
+@bot_exchange.message_handler(content_types=['location', ])
+def loc_factory(message: telebot.types.Message):
+    bot_exchange.send_message(message.chat.id, 'Теперь я знаю, где вы находитесь. Но мне это знание бесполезно, уже забыл.')
+
+@bot_exchange.message_handler(content_types=['contact', ])
+def cont_factory(message: telebot.types.Message):
+    bot_exchange.send_message(message.chat.id, 'Будь у меня мозги, я-б пообщался. Но я не Страшила-Мудрый, мне нечем думать.')
+
+@bot_exchange.message_handler(content_types=['sticker'])
+def stic_factory(message: telebot.types.Message):
+    bot_exchange.send_sticker(message.chat.id, "CAACAgIAAxkBAAOMY6WAdMw1TO1RLiHv6M807AcmZgsAAh4AA8A2TxOhYFstqwAB3gQsBA")
+
 bot_exchange.polling()
